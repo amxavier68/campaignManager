@@ -11,11 +11,9 @@ const Landing = () => <h2>Landing</h2>;
 
 class App extends Component {
 
-
-  componentDidMount(){
+  componentDidMount() {
     this.props.fetchUser();
   }
-
 
   render() {
     return (
