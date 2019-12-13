@@ -6,8 +6,8 @@ module.exports = app => {
   // Stripe integration
   app.post('/api/stripe', async (req, res) => {
 
-    console.log(req.body);
-    console.log(req.body.id);
+    // console.log(req.body);
+    // console.log(req.body.id);
     
     const charge = await stripe.charges.create({
         amount: 1495,
