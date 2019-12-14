@@ -25,10 +25,7 @@ class Header extends Component {
       return (
         <nav style={{ paddingLeft: '20px', backgroundColor: 'rgb(31, 29, 29)' }}>
           <div className="nav-wrapper">
-            <Link 
-              to={ this.props.auth ? '/surveys' : '/' } 
-              className="left brand-logo"
-            >campaignManager</Link>
+            <Link to={ this.props.auth ? '/surveys' : '/' } className="left brand-logo">campaignManager</Link>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
                 { this.renderContent() }
             </ul>
