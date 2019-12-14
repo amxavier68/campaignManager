@@ -19,9 +19,8 @@ module.exports = app => {
         _user: req.user.id,
         dateSent: Date.now()
     }); 
+    // Send email using sendgrid
+    const mailer = new Mailer(survey, surveyTemplate(survey));
+    mailer.send();
   });
-
-  // Send email using sendgrid
-  const mailer = new Mailer(survey, surveyTemplate(survey));
-  mailer.send();
 };

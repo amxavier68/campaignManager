@@ -44,6 +44,9 @@ class Mailer extends helper.Mail {
            path: '/v3/mail/send',
            body: this.toJSON()
        });
+
+       const response = this.sgAPI.API(request);
+       return response;
    }
 }
 
