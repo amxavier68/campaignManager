@@ -5,6 +5,8 @@ const keys = require('../config/keys');
 class Mailer extends helper.Mail {
    constructor({ subject, recipients }, content) {
      super();
+
+     this.sgAPI = sendgrid(keys.sendGridKey);
      this.from_email = new helper.Email('no-reply@emaily.com');
      this.subject = subject;
      this.body = new helper.Content('text/html', content);
@@ -33,7 +35,15 @@ class Mailer extends helper.Mail {
     this.recipients.forEach(recipient => {
         personalize.addTo(recipient);
     });
-    this.Personalization(personalize);
+    this.addPersonalization(personalize);
+   }
+
+   async send() {
+       const request = this.sgAPI.emptyRequest({
+           method: 'POST',
+           path: '/v3/mail/send',
+           body: this.toJSON()
+       });
    }
 }
 
