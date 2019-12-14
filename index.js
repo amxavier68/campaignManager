@@ -25,6 +25,7 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 // Route Handler for static assets
 if(process.env.NODE_ENV === 'production'){
