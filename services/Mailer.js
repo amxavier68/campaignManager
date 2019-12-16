@@ -46,14 +46,14 @@ class Mailer extends helper.Mail {
    }
 
    async send() {
-       const request = this.sgAPI.emptyRequest({
-           method: 'POST',
-           path: '/v3/mail/send',
-           body: this.toJSON()
-       });
+    const request = this.sgAPI.emptyRequest({
+        method: 'POST',
+        path: '/v3/mail/send',
+        body: this.toJSON()
+    });
 
-       const response = this.sgAPI.API(request);
-       return response;
+    const response = await this.sgAPI.API(request);
+    return response;
    }
 }
 

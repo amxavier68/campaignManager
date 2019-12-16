@@ -13,11 +13,15 @@ import axios from 'axios';
 window.axios = axios;
 
 // Test Data
-// const survey = { title: 'myTitle', 
-//                 subject: 'Test Email', 
-//                 recipients: 'anthony-xavier@live.com', 
-//                 body: 'this is a test body' 
-//             };
+//
+// To be run at browser console
+//
+const survey = { title: 'myTitle', 
+                subject: 'Test Email', 
+                recipients: 'anthony-xavier@live.com', 
+                body: 'this is a test body' 
+            };
+// axios.post('/api/surveys', survey);
 
 const store = createStore(
     reducers, 
