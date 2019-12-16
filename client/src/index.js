@@ -8,9 +8,16 @@ import reduxThunk from 'redux-thunk';
 import App from './components/App';
 import reducers from './reducers';
 
-// Development only helpers
+// Development purposes only helper
 import axios from 'axios';
 window.axios = axios;
+
+// Test Data
+// const survey = { title: 'myTitle', 
+//                 subject: 'Test Email', 
+//                 recipients: 'anthony-xavier@live.com', 
+//                 body: 'this is a test body' 
+//             };
 
 const store = createStore(
     reducers, 
