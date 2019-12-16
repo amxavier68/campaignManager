@@ -8,7 +8,7 @@ const surveySchema = new Schema({
     body: String,
     recipients: [RecipientSchema],
 
-    // Question Types: Closed questions
+    // Question Types:: Closed questions
     yes: { type: Number, default: 0 },
     no: { type: Number, default: 0 },
     
