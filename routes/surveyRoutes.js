@@ -8,6 +8,11 @@ const Survey = mongoose.model('surveys');
 
 module.exports = app => {
 
+  // Custom Client Route
+  app.get('/api/surveys/thanks', (req, res) => {
+    res.send('Thanks for voting!');
+  });
+
   // Create new survey
   app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
     const { title, subject, body, recipients } = req.body;
@@ -30,7 +35,7 @@ module.exports = app => {
       res.send(user);
     } catch(err) {
       res.status(422).send(err);
-    }
-    
-  });
-};
+    }    
+  }); 
+
+}
