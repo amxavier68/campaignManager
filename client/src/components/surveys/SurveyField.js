@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-const SurveyField = () => {
+const SurveyField = ({ input, label }) => {
+
     return (
         <div>
-            
+            <label>{label}</label>
+            <input {...input} />
         </div>
     )
 }

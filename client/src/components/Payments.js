@@ -7,7 +7,7 @@ class Payments extends Component {
   render() {
     return (
         <StripeCheckout 
-          name="Emaily" 
+          name="campaignManager" 
           description="$5 for 5 email credits"
           amount={500} 
           currency="AUD"

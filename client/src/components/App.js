@@ -8,6 +8,9 @@ import Header from './Header';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
+import Footer from './Footer';
+import Terms from './Terms';
+import Privacy from './Privacy';
 
 class App extends Component {
 
@@ -17,16 +20,18 @@ class App extends Component {
 
   render() {
     return (
-        <div className="container">
         <Router>
-            <div>
-                <Header />
+          <Header className="mb-3" />
+            <div className="container">
                 <Route exact path="/" component={Landing} />
                 <Route exact path="/surveys" component={Dashboard} />
                 <Route path="/surveys/new" component={SurveyNew} />
+                
             </div>
+            <Footer/>
+            <Terms />
+            <Privacy />
         </Router>
-        </div>
     )
   }
 };
