@@ -5,7 +5,7 @@ import Payments from './Payments';
 
 
 class Header extends Component {
-
+  
   renderContent() {
     switch(this.props.auth){
       case null:
@@ -23,7 +23,7 @@ class Header extends Component {
 
   render() {
       return (
-        <nav style={{ paddingLeft: '20px', backgroundColor: 'rgb(31, 29, 29)' }}>
+        <nav style={{ paddingLeft: '20px', backgroundColor: 'rgb(31, 29, 29)', marginBottom: '20px' }}>
           <div className="nav-wrapper">
             <Link to={ this.props.auth ? '/surveys' : '/' } className="left brand-logo">campaignManager</Link>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
