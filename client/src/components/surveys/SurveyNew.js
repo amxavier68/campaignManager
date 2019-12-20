@@ -6,14 +6,20 @@ class SurveyNew extends Component {
     
     // Component Level State
     state = { showFormReview: false };
-    
-    componentDidMount() { }
 
     renderContent() {
+        // Put delete function in here
+
         if(this.state.showFormReview) {
-            return <SurveyFormReview />;
-        } 
-        return  <SurveyForm />
+            return <SurveyFormReview onCancel={() => 
+              this.setState({showFormReview: false})
+            }/>;
+        }
+
+        return  <SurveyForm onSurveySubmit={() => {
+            this.setState({  showFormReview: true });
+        }}/>
+
     }
 
     render() {
