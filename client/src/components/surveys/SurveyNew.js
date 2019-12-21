@@ -8,18 +8,15 @@ class SurveyNew extends Component {
     state = { showFormReview: false };
 
     renderContent() {
-        // Put delete function in here
+        // if(this.state.showFormReview) {
+        //   return <SurveyFormReview onCancel={() => this.setState({ showFormReview: false })}/>;
+        // }
+        // return  <SurveyForm onSurveySubmit={() => { this.setState({ showFormReview: true })}} />
 
-        if(this.state.showFormReview) {
-            return <SurveyFormReview onCancel={() => 
-              this.setState({showFormReview: false})
-            }/>;
-        }
-
-        return  <SurveyForm onSurveySubmit={() => {
-            this.setState({  showFormReview: true });
-        }}/>
-
+        // Make ternary
+        return (this.state.showFormReview) 
+          ? <SurveyFormReview onCancel={() => this.setState({ showFormReview: false })}/>
+          : <SurveyForm onSurveySubmit={() => { this.setState({ showFormReview: true })}} />;
     }
 
     render() {

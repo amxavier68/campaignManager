@@ -6,17 +6,10 @@ import SurveyField from './SurveyField';
 import formFields from './formFields';
 import validateEmails from '../../utils/validateEmails';
 
-const FIELDS = [
-    { label: 'Survey Title', name: 'title'},
-    { label: 'Subject Line', name: 'subject'},
-    { label: 'Email Body', name: 'body'},
-    { label: 'Recipient List', name: 'emails'}
-];
-
 class SurveyForm extends Component {
 
     renderFields() {
-      return _.map(FIELDS, ({label, name}) => {
+      return _.map(formFields, ({label, name}) => {
         return <Field key={name} component={SurveyField} type="text" label={label} name={name} />
       });
     }
