@@ -14,6 +14,12 @@ module.exports = app => {
     res.send('Thanks for voting!');
   });
 
+  // Webhooks
+  app.post('/api/survey/webhooks', (req, res) => {
+    console.log(req.body);
+    res.send({});
+  });
+
   // Create new survey
   app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
     const { title, subject, body, recipients } = req.body;
@@ -37,6 +43,6 @@ module.exports = app => {
     } catch(err) {
       res.status(422).send(err);
     }    
-  }); 
+  });
 
 }
